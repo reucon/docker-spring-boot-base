@@ -8,8 +8,6 @@ echo "Arguments: $@"
 
 COMMON_JAVA_OPTS="-server
   -XX:+ExitOnOutOfMemoryError
-  -XX:+UnlockExperimentalVMOptions
-  -XX:+UseCGroupMemoryLimitForHeap
   -XshowSettings:vm
   -Djava.security.egd=file:/dev/./urandom"
 
@@ -17,8 +15,16 @@ if [ -n "$JAVA_MAX_METASPACE_SIZE" ]; then
   COMMON_JAVA_OPTS="$COMMON_JAVA_OPTS -XX:MaxMetaspaceSize=${JAVA_MAX_METASPACE_SIZE}"
 fi
 
-if [ -n "$JAVA_MAX_RAM_FRACTION" ]; then
-  COMMON_JAVA_OPTS="$COMMON_JAVA_OPTS -XX:MaxRAMFraction=${JAVA_MAX_RAM_FRACTION}"
+if [ -n "$JAVA_INITIAL_RAM_PERCENTAGE" ]; then
+  COMMON_JAVA_OPTS="$COMMON_JAVA_OPTS -XX:InitialRAMPercentage=${JAVA_INITIAL_RAM_PERCENTAGE}"
+fi
+
+if [ -n "$JAVA_MIN_RAM_PERCENTAGE" ]; then
+  COMMON_JAVA_OPTS="$COMMON_JAVA_OPTS -XX:MinRAMPercentage=${JAVA_MIN_RAM_PERCENTAGE}"
+fi
+
+if [ -n "$JAVA_MAX_RAM_PERCENTAGE" ]; then
+  COMMON_JAVA_OPTS="$COMMON_JAVA_OPTS -XX:MaxRAMPercentage=${JAVA_MAX_RAM_PERCENTAGE}"
 fi
 
 if [ -n "$JAVA_XMS" ]; then
