@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -euo pipefail
-
 echo "Xms: ${JAVA_XMS}"
 echo "Xmx: ${JAVA_XMX}"
 echo "MaxMetaspaceSize: ${JAVA_MAX_METASPACE_SIZE}"
