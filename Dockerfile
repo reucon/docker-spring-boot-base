@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM openjdk:10-jre
 
 ENV JAVA_MAX_RAM_FRACTION=1 \
     JAVA_MAX_METASPACE_SIZE=512m \
