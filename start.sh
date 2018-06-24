@@ -1,10 +1,10 @@
 #!/bin/sh
 
-echo "Xms: ${JAVA_XMS}"
-echo "Xmx: ${JAVA_XMX}"
-echo "MaxMetaspaceSize: ${JAVA_MAX_METASPACE_SIZE}"
-echo "JAVA_OPTS: ${JAVA_OPTS}"
-echo "Arguments: $@"
+# echo "Xms: ${JAVA_XMS}"
+# echo "Xmx: ${JAVA_XMX}"
+# echo "MaxMetaspaceSize: ${JAVA_MAX_METASPACE_SIZE}"
+# echo "JAVA_OPTS: ${JAVA_OPTS}"
+# echo "Arguments: $@"
 
 COMMON_JAVA_OPTS="-server
   -XX:+ExitOnOutOfMemoryError
