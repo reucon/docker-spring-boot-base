@@ -35,15 +35,7 @@ if [ -n "$JAVA_XMX" ]; then
 fi
 
 if [ -n "$ELASTIC_APM_SERVER_URL" ]; then
-  COMMON_JAVA_OPTS="$COMMON_JAVA_OPTS -javaagent:/elastic-apm-agent.jar -Delastic.apm.server_url=${ELASTIC_APM_SERVER_URL}"
-fi
-
-if [ -n "$SERVICE_NAME" ]; then
-  COMMON_JAVA_OPTS="$COMMON_JAVA_OPTS -Delastic.apm.service_name=${SERVICE_NAME}"
-fi
-
-if [ -n "$APPLICATION_PACKAGES" ]; then
-  COMMON_JAVA_OPTS="$COMMON_JAVA_OPTS -Delastic.apm.application_packages=${APPLICATION_PACKAGES}"
+  COMMON_JAVA_OPTS="$COMMON_JAVA_OPTS -javaagent:/elastic-apm-agent.jar"
 fi
 
 exec java \
