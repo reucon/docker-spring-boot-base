@@ -8,7 +8,6 @@
 
 COMMON_JAVA_OPTS="-server
   -XX:+ExitOnOutOfMemoryError
-  -XshowSettings:vm
   -Djava.security.egd=file:/dev/./urandom"
 
 if [ -n "$JAVA_MAX_METASPACE_SIZE" ]; then
