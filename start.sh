@@ -43,7 +43,7 @@ if [ -n "$SERVICE_NAME" ]; then
 fi
 
 if [ -n "$APPLICATION_PACKAGES" ]; then
-  COMMON_JAVA_OPTS="$COMMON_JAVA_OPTS -Delastic.apm.application_packages=${APPLICATION_PACAKGES}"
+  COMMON_JAVA_OPTS="$COMMON_JAVA_OPTS -Delastic.apm.application_packages=${APPLICATION_PACKAGES}"
 fi
 
 exec java \
